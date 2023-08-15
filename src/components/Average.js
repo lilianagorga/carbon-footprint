@@ -9,24 +9,43 @@ const Average = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const sixMonthsAgo = new Date('2023-02-11T13:03:40.254000+00:00');
+        const currentDate = new Date('2023-08-11T13:03:40.254000+00:00');
+        const monthlyAverageData = [];
+        sixMonthsAgo.setMonth(currentDate.getMonth() - 6);
+        let startDate = new Date(currentDate);
+        startDate.setMonth(startDate.getMonth() - 1);
+
+      while (startDate >= sixMonthsAgo) {
+        const formattedStartDate = startDate.toISOString().split('T')[0];
+        const endDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0);
+        const formattedEndDate = endDate.toISOString().split('T')[0];
+
         const response = await axios.get(`${baseUrl}/api/v2/carbonmonoxide/average.json`, {
           params: {
-            begin: '2023-02-11', 
-            end: '2023-08-11',  
-            limit: 100,
+            begin: formattedStartDate,
+            end: formattedEndDate,
+            limit: 1,
             offset: 0,
-            country: 'IT'        
+            country: 'IT'
           }
         });
-        setAverages(response.data);
-        console.log('average', response.data);
-      } catch (error) {
-        console.error('Error fetching averages:', error);
-      }
-    };
 
-    fetchData();
-  }, [baseUrl]);
+        monthlyAverageData.push(response.data[0]);
+
+        startDate.setMonth(startDate.getMonth() - 1);
+      }
+
+      setAverages(monthlyAverageData);
+      console.log('average', monthlyAverageData);
+    } catch (error) {
+      console.error('Error fetching averages:', error);
+    }
+  };
+
+  fetchData();
+}, [baseUrl]);
+
 
   const chartData = averages.map(item => ({
     name: item.start,
