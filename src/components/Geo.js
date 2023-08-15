@@ -11,8 +11,8 @@ const Geo = () => {
         const response = await axios.get(`${baseUrl}/api/v2/carbonmonoxide/geo.json`, {
           params: {
             geoframe: '6.0,47.0,18.5,36.5',
-            begin: '2023-02-11', // Replace with actual date
-            end: '2023-08-11',   // Replace with actual date
+            begin: '2023-02-11', 
+            end: '2023-08-11', 
             limit: 100,
             offset: 0
           }
@@ -34,6 +34,7 @@ const Geo = () => {
         {geoData.map((feature, index) => (
           <li key={index}>
             Properties: {JSON.stringify(feature.properties)}
+            Geometry: {JSON.stringify(feature.geometry)}
           </li>
         ))}
       </ul>
