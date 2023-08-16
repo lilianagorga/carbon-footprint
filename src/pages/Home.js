@@ -11,6 +11,9 @@ const Home = () => {
       <div>
         <Link to="/countries">CO2 by Country</Link>
       </div>
+      <div>
+        <Link to="/geo">CO2 by Latitude and Longitude</Link>
+      </div>
     </div>
   );
 };

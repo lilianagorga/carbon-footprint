@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import countryCodeList from './utils/countryCodeList';
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -27,9 +29,14 @@ const Countries = () => {
     <div>
       <h1>List of Countries</h1>
       <ul>
-        {Object.keys(countries).map(countryKey => (
-          <li key={countryKey}>{countries[countryKey]}</li>
+        {countryCodeList.map((country, index) => (
+          <li key={index}>
+            <Link to={`/average${country.url}`}>{country.name}</Link>
+          </li>
         ))}
+        <li>
+          <Link to="/average">Global Average</Link>
+        </li>
       </ul>
     </div>
   );

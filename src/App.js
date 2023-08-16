@@ -16,8 +16,8 @@ function App() {
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/countries" element={<Countries />} />
-          <Route exact path="/average" element={<Average />} />
+          <Route path="/countries" element={<Countries />} />
+          <Route path="/average/:countryCode?" element={<Average />} />
           <Route exact path="/geo" element={<Geo />} />
         </Routes>
       </div>
