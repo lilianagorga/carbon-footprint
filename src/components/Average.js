@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const Average = () => {
   const [averages, setAverages] = useState([]);
+  const { countryCode } = useParams();
   const baseUrl = 'https://api.v2.emissions-api.org';
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,15 +23,29 @@ const Average = () => {
         const endDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0);
         const formattedEndDate = endDate.toISOString().split('T')[0];
 
-        const response = await axios.get(`${baseUrl}/api/v2/carbonmonoxide/average.json`, {
-          params: {
-            begin: formattedStartDate,
-            end: formattedEndDate,
-            limit: 1,
-            offset: 0,
-            country: 'IT'
+        let response;
+          if (!countryCode) {
+            console.log('Fetching global average data...');
+            response = await axios.get(`${baseUrl}/api/v2/carbonmonoxide/average.json`, {
+              params: {
+                begin: formattedStartDate,
+                end: formattedEndDate,
+                limit: 1,
+                offset: 0,
+              }
+            });
+          } else {
+            console.log(`Fetching average data for country code: ${countryCode}`);
+            response = await axios.get(`${baseUrl}/api/v2/carbonmonoxide/average.json`, {
+              params: {
+                begin: formattedStartDate,
+                end: formattedEndDate,
+                limit: 1,
+                offset: 0,
+                country: countryCode
+              }
+            });
           }
-        });
 
         monthlyAverageData.push(response.data[0]);
 
@@ -44,7 +60,7 @@ const Average = () => {
   };
 
   fetchData();
-}, [baseUrl]);
+}, [baseUrl, countryCode]);
 
 
   const chartData = averages.map(item => ({
