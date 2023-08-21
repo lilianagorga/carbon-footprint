@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import SearchContainer from './pages/SearchContainer';
-import EmissionsContainer from './pages/EmissionsContainer';
-import GetCountries from './components/CountriesList/GetCountries';
+import Search from './pages/Search';
+import Emissions from './pages/Emissions';
+import Countries from './components/Countries';
 
 function App() {
   return (
@@ -24,9 +24,9 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/search" element={<SearchContainer />} />
-          <Route path="/emissions/:country/:start/:end" element={<EmissionsContainer />} />
-          <Route path="/countries" element={<GetCountries />} />
+          <Route path="/search" element={<Search/>} />
+          <Route path="/emissions/:country/:start/:end" element={<Emissions />} />
+          <Route path="/countries" element={<Countries />} />
         </Routes>
     </div>
   );

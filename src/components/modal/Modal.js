@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../assets/search.css';
 import '../../pages/Search';
 
-const SearchModal = ({
+const Modal = ({
   country,
   countries,
   startDate,
@@ -58,4 +58,4 @@ const SearchModal = ({
   );
 };
 
-export default SearchModal;
+export default Modal;
