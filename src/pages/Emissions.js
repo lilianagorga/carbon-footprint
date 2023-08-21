@@ -14,18 +14,23 @@ const Emissions = () => {
       const startDate = '2019-01-01';
       const url = `https://api.v2.emissions-api.org/api/v2/carbonmonoxide/average.json?country=${country}&begin=${startDate}&end=${currentDate}&offset=0`;
 
-      try {
-        const response = axios.get(url);
-        const data = response.data;
-        const formattedData = sortAndFormatData(data);
-        const filterRange = filterDataByDateRange(formattedData, start, end);
-        setRangeEmissions(filterRange);
-        const avg = filterRange.reduce((acc, curr) => acc + curr.average, 0).toFixed(2);
-        setAverage(avg);
-      } catch (error) {
-        console.log(error);
-      }
-  }, [country, start, end]);
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(url);
+          const data = response.data;
+          const formattedData = sortAndFormatData(data);
+          const filterRange = filterDataByDateRange(formattedData, start, end);
+          setRangeEmissions(filterRange);
+          const avg = filterRange.reduce((acc, curr) => acc + curr.average, 0).toFixed(2);
+          setAverage(avg);
+          console.log('avg', avg);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+      fetchData();
+    }, [country, start, end]);
 
     return (
       <EmissionsGraphic rangeEmissions={rangeEmissions} average={average} />
