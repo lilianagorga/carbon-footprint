@@ -1,27 +1,36 @@
-import { Routes, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import Countries from './components/Countries';
-import Average from './components/Average';
-import Geo from './components/Geo';
+import SearchContainer from './pages/SearchContainer';
+import EmissionsContainer from './pages/EmissionsContainer';
+import GetCountries from './components/CountriesList/GetCountries';
 
 function App() {
   return (
-      <div className="app">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-        </nav>
+    <div className="app">
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/search">Search</Link>
+          </li>
+          <li>
+            <Link to="/countries">Countries</Link>
+          </li>
+        </ul>
+      </nav>
+
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/countries" element={<Countries />} />
-          <Route path="/average/:countryCode?" element={<Average />} />
-          <Route exact path="/geo" element={<Geo />} />
+          <Route path="/search" element={<SearchContainer />} />
+          <Route path="/emissions/:country/:start/:end" element={<EmissionsContainer />} />
+          <Route path="/countries" element={<GetCountries />} />
         </Routes>
-      </div>
+    </div>
   );
 }
 
 export default App;
+
