@@ -1,8 +1,9 @@
-import { Routes, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import Search from "./pages/Search";
-import Emissions from './pages/Emissions';
-import Countries from './components/Countries';
+import SearchContainer from './pages/SearchContainer';
+import EmissionsContainer from './pages/EmissionsContainer';
+import GetCountries from './components/CountriesList/GetCountries';
 
 function App() {
   return (
@@ -21,14 +22,15 @@ function App() {
         </ul>
       </nav>
 
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/countries" element={<Countries />} />
-        <Route path="/emissions/:country/:start/:end" element={<Emissions />} />
-      </Routes>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/search" element={<SearchContainer />} />
+          <Route path="/emissions/:country/:start/:end" element={<EmissionsContainer />} />
+          <Route path="/countries" element={<GetCountries />} />
+        </Routes>
     </div>
   );
 }
 
 export default App;
+
