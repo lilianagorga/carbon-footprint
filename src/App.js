@@ -26,6 +26,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/search" element={<Search/>} />
           <Route path="/emissions/:country/:start/:end" element={<Emissions />} />
+          <Route path="/emissions/coordinates/:latitude/:longitude/:start/:end" element={<Emissions />} />
           <Route path="/countries" element={<Countries />} />
         </Routes>
     </div>
