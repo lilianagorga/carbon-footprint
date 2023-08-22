@@ -1,7 +1,7 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
-const EmissionsGraphic = ({ rangeEmissions }) => {
+const Chart = ({ rangeEmissions }) => {
   return (
     <div>
       <h1>Emissions</h1>
@@ -19,4 +19,4 @@ const EmissionsGraphic = ({ rangeEmissions }) => {
   );
 };
 
-export default EmissionsGraphic;
+export default Chart;
