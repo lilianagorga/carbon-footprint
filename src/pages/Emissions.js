@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import EmissionsGraphic from '../components/emissionsGraphic/EmissionsGraphic';
+import Chart from '../components/chart/Chart';
 import { sortAndFormatData, filterDataByDateRange } from '../utils';
 
 const Emissions = () => {
@@ -33,7 +33,7 @@ const Emissions = () => {
     }, [country, start, end]);
 
     return (
-      <EmissionsGraphic rangeEmissions={rangeEmissions} average={average} />
+      <Chart rangeEmissions={rangeEmissions} average={average} />
     );
   };
   
