@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../assets/search.css';
+import '../../assets/styles/search.css';
 import '../../pages/Search';
 
 const Modal = ({

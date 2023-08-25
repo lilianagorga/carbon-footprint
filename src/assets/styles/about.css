@@ -1,0 +1,28 @@
+/* About.css */
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-name {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Stili per le immagini */
+.about-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border: 2px solid #ccc;
+}
+
+/* Stili per i paragrafi */
+.about-container p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
