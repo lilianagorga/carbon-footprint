@@ -15,6 +15,12 @@ const About = () => {
       </p>
 
       <h2>Why Should You Calculate CO2 Emissions?</h2>
+      <p>Reducing CO2 emissions is crucial for slowing down climate change and preserving the environment for future generations. Here are some key statistics:</p>
+        <ul>
+          <li>CO2 emissions contribute to global warming and climate change.</li>
+          <li>Transportation and energy consumption are major sources of emissions.</li>
+          <li>By reducing emissions, we can enjoy cleaner air, a more stable climate, and healthier ecosystems.</li>
+        </ul>
       <h3>General Questions</h3>
       <p>
         <strong>1. What is CO2 emissions calculation?</strong><br />
@@ -32,9 +38,18 @@ const About = () => {
         <strong>4. How can I contribute?</strong><br />
         By using the application, you can estimate your emissions and discover ways to make small changes to reduce them. Even small actions, when collective, make a significant difference.
       </p>
-        <img src={imageNasa1} alt="" className='about-image'/>
-        <img src={imageNasa2} alt="" className='about-image'/>
-        <img src={imageNasa3} alt="" className='about-image'/>
+      <p>
+        <strong>5. How Can <span className='app-name'>Carbon Footprint</span> Help You?</strong><br />
+          Our application is designed to provide practical solutions for a more sustainable lifestyle:
+      </p>
+      <ul>
+        <li>Plan eco-friendly travel by calculating the emissions of your trips.</li>
+        <li>Understand your carbon footprint and discover ways to reduce it.</li>
+        <li>Explore scenarios to see the impact of lifestyle changes on emissions.</li>
+      </ul>
+      <img src={imageNasa1} alt="" className='about-image'/>
+      <img src={imageNasa2} alt="" className='about-image'/>
+      <img src={imageNasa3} alt="" className='about-image'/>
       <video controls>
         <source src={videoNasa1} type="video/mp4" />
         Your browser does not support the video tag.
