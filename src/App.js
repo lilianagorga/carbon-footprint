@@ -5,6 +5,7 @@ import Search from './pages/Search';
 import Emissions from './pages/Emissions';
 import About from './pages/About';
 import Countries from './components/Countries';
+import './assets/styles/global.css';
 
 function App() {
   return (
