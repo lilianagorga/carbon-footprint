@@ -4,11 +4,12 @@ import { getAllCountries } from '../utils';
 import Modal from '../components/modal/Modal';
 
 const Search = () => {
+  const navigate = useNavigate();
+
   const [country, setCountry] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [countries, setCountries] = useState([]);
-  const navigate = useNavigate();
   const [searchType, setSearchType] = useState('country');
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
@@ -27,10 +28,12 @@ const Search = () => {
   }, []);
 
   const handleSubmit = () => {
-    if (searchType === 'country') {
-      navigate(`/emissions/country/${country}/${startDate}/${endDate}`);
-    } else if (searchType === 'coordinates') {
-      navigate(`/emissions/coordinates/${latitude}/${longitude}/${startDate}/${endDate}`);
+    if (searchType === "country") {
+      navigate(`/emissions?country=${country}&startDate=${startDate}&endDate=${endDate}`);
+    } else if (searchType === "coordinates") {
+      navigate(
+        `/emissions?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}`
+      );
     }
   };
 

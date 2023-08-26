@@ -3,6 +3,7 @@ import '../../assets/styles/search.css';
 import '../../pages/Search';
 
 const Modal = ({
+  handleSubmit,
   country,
   countries,
   startDate,
@@ -10,13 +11,12 @@ const Modal = ({
   setCountry,
   setStartDate,
   setEndDate,
-  handleSubmit,
   setSearchType,
   longitude,
   latitude,
   setLongitude,
   setLatitude,
-  searchType
+  searchType,
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -34,7 +34,10 @@ const Modal = ({
       {modalIsOpen && (
         <div className="modal">
           <div className="modal-content">
-            <select value={country} onChange={(e) => setCountry(e.target.value)}>
+            <select
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            >
               <option value="">Select a country</option>
               {countries.map((c) => (
                 <option key={c.value} value={c.value}>
@@ -42,10 +45,10 @@ const Modal = ({
                 </option>
               ))}
             </select>
-            <button onClick={() => setSearchType('coordinates')}>
+            <button onClick={() => setSearchType("coordinates")}>
               Search by Coordinates
             </button>
-            {searchType === 'coordinates' && (
+            {searchType === "coordinates" && (
               <>
                 <div>
                   <label>
@@ -59,7 +62,7 @@ const Modal = ({
                 </div>
                 <div>
                   <label>
-                  Latitude:
+                    Latitude:
                     <input
                       type="text"
                       value={latitude}
@@ -82,7 +85,11 @@ const Modal = ({
             <div>
               <label>
                 End Date:
-                <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+                <input
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
               </label>
             </div>
             <div>
@@ -90,7 +97,7 @@ const Modal = ({
               <button onClick={closeModal}>Close</button>
             </div>
           </div>
-          </div>
+        </div>
       )}
     </div>
   );

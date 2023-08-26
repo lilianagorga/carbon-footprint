@@ -26,17 +26,15 @@ function App() {
         </ul>
       </nav>
 
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/search" element={<Search/>} />
-          <Route path="/about" element={<About />} />
-          <Route path="/emissions/country/:country/:start/:end" element={<Emissions />} />
-          <Route path="/emissions/coordinates/:latitude/:longitude/:start/:end" element={<Emissions />} />
-          <Route path="/countries" element={<Countries />} />
-        </Routes>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/search" element={<Search/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/emissions" element={<Emissions />} />
+        <Route path="/countries" element={<Countries />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-

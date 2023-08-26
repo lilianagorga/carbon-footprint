@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 import axios from 'axios';
 import Chart from '../components/charts/Chart';
 import PromptChart from '../components/charts/PromptChart';
 import { sortAndFormatData, filterDataByDateRange, timeRangeOption } from '../utils';
 
 const Emissions = () => {
-  const { country, latitude, longitude, start, end } = useParams();
+  const [searchParams] = useSearchParams();
+  const country = searchParams.get('country');
+  const latitude = searchParams.get('latitude');
+  const longitude = searchParams.get('longitude');
+  const start = searchParams.get('startDate');
+  const end = searchParams.get('endDate');
+
   const [rangeEmissions, setRangeEmissions] = useState([]);
   const [average, setAverage] = useState(0);
   const [promptChart, setPromptChart] = useState([]);
