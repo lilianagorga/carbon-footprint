@@ -6,7 +6,6 @@ const Chart = ({ rangeEmissions }) => {
     <div>
       <h1>Emissions</h1>
       
-      
       <BarChart width={600} height={400} data={rangeEmissions}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="start" />

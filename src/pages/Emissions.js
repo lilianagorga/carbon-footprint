@@ -3,7 +3,11 @@ import { useSearchParams } from "react-router-dom";
 import axios from 'axios';
 import Chart from '../components/charts/Chart';
 import PromptChart from '../components/charts/PromptChart';
-import { sortAndFormatData, filterDataByDateRange, timeRangeOption } from '../utils';
+import {
+  timeRangeOption,
+  handleDateRangeChange,
+  processData,
+} from "../utils";
 
 const Emissions = () => {
   const [searchParams] = useSearchParams();
@@ -13,62 +17,58 @@ const Emissions = () => {
   const start = searchParams.get('startDate');
   const end = searchParams.get('endDate');
 
+  const startDate = "2019/01/01";
+
   const [rangeEmissions, setRangeEmissions] = useState([]);
   const [average, setAverage] = useState(0);
   const [promptChart, setPromptChart] = useState([]);
-  const startDate = '2019/01/01';
   const [timeRange, setTimeRange] = useState(timeRangeOption[0].value);
   const [emissionData, setEmissionData] = useState([]);
 
-  useEffect(() => {
-    const currentDate = new Date().toJSON().split('T')[0];
-    let url;
+  const generateUrl = () => {
+    const currentDate = new Date().toJSON().split("T")[0];
 
     if (latitude && longitude) {
-      url = `https://api.v2.emissions-api.org/api/v2/carbonmonoxide/average.json?point=${longitude}&point=${latitude}&begin=${startDate}&end=${currentDate}&offset=0`;
+      return `https://api.v2.emissions-api.org/api/v2/carbonmonoxide/average.json?point=${longitude}&point=${latitude}&begin=${startDate}&end=${currentDate}&offset=0`;
     } else {
-      url = `https://api.v2.emissions-api.org/api/v2/carbonmonoxide/average.json?country=${country}&begin=${startDate}&end=${currentDate}&offset=0`;
+      return `https://api.v2.emissions-api.org/api/v2/carbonmonoxide/average.json?country=${country}&begin=${startDate}&end=${currentDate}&offset=0`;
     }
+  };
 
+  const url = generateUrl();
+
+  const handleTimeRangeChange = (e) => {
+    setTimeRange(e.target.value);
+  };
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(url);
-        const data = response.data;
-        const formattedData = sortAndFormatData(data);
+        const { data } = await axios.get(url);
+        const { formattedData, filterRange, processedAverage } =
+          processData(data, start, end);
+
         setEmissionData(formattedData);
-        const filterRange = filterDataByDateRange(formattedData, start, end);
         setRangeEmissions(filterRange);
-        const avg = filterRange.reduce((acc, curr) => acc + curr.average, 0).toFixed(2);
-        setAverage(avg);
-        console.log('avg', avg);
+        setAverage(processedAverage);
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
-  }, [country, latitude, longitude, start, end]);
+  }, [url, start, end]);
 
   useEffect(() => {
-    if (emissionData.length === 0) {
-      return;
-    }
-    const setRange = timeRangeOption.find((range) => range.value === timeRange);
-    const additionalFilterRange = filterDataByDateRange(emissionData, setRange.startDate, setRange.endDate);
-    setPromptChart(additionalFilterRange);
-    const avg = additionalFilterRange.reduce((acc, curr) => acc + curr.average, 0).toFixed(2);
-    console.log('Average:', avg);
+    const dateRange = handleDateRangeChange(emissionData, timeRange);
+    setPromptChart(dateRange);
   }, [emissionData, timeRange]);
-
-  const handleDate = (e) => {
-    setTimeRange(e.target.value);
-  };
 
   return (
     <div>
       <div>
         <label>
           Period:
-          <select value={timeRange} onChange={handleDate}>
+          <select value={timeRange} onChange={handleTimeRangeChange}>
             {timeRangeOption.map((range) => (
               <option key={range.value} value={range.value}>
                 {range.label}

@@ -22,7 +22,6 @@ export const sortAndFormatData = (data) => {
   return formattedData;
 };
 
-
 export const filterDataByDateRange = (data, startDate, endDate) => {
   const filterRange = data.filter((data) => {
     const startDateValue = new Date(data.start).getTime();
@@ -36,5 +35,3 @@ export const filterDataByDateRange = (data, startDate, endDate) => {
 
   return filterRange;
 };
-
-
