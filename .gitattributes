@@ -1,2 +1,0 @@
-src/assets/video/video-nasa-1.mp4 filter=lfs diff=lfs merge=lfs -text
-src/assets/video/*.mp4 filter=lfs diff=lfs merge=lfs -text
