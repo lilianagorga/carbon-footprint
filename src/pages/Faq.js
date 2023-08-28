@@ -3,24 +3,11 @@ import imageNasa1 from '../assets/img/img-nasa-1.jpeg';
 import imageNasa2 from '../assets/img/img-nasa-2.jpeg';
 import imageNasa3 from '../assets/img/img-nasa-3.jpeg';
 import videoNasa1 from '../assets/video/video-nasa-1.mp4';
-import '../assets/styles/about.css';
+import '../assets/styles/faq.css';
 
-const About = () => {
+const Faq = () => {
   return (
-    <div className='about-container'>
-      <h1>Welcome to <span className='app-name'>Carbon Footprint</span></h1>
-      <h2>Who We Are</h2>
-      <p>
-        Welcome to <span className='app-name'>Carbon Footprint</span>, your resource for calculating CO2 emissions and environmental impact. We're passionate about the environment and want to help you understand the significance of your actions on our planet's health.
-      </p>
-
-      <h2>Why Should You Calculate CO2 Emissions?</h2>
-      <p>Reducing CO2 emissions is crucial for slowing down climate change and preserving the environment for future generations. Here are some key statistics:</p>
-        <ul>
-          <li>CO2 emissions contribute to global warming and climate change.</li>
-          <li>Transportation and energy consumption are major sources of emissions.</li>
-          <li>By reducing emissions, we can enjoy cleaner air, a more stable climate, and healthier ecosystems.</li>
-        </ul>
+    <div className='faq-container'>
       <h3>General Questions</h3>
       <p>
         <strong>1. What is CO2 emissions calculation?</strong><br />
@@ -47,9 +34,9 @@ const About = () => {
         <li>Understand your carbon footprint and discover ways to reduce it.</li>
         <li>Explore scenarios to see the impact of lifestyle changes on emissions.</li>
       </ul>
-      <img src={imageNasa1} alt="" className='about-image'/>
-      <img src={imageNasa2} alt="" className='about-image'/>
-      <img src={imageNasa3} alt="" className='about-image'/>
+      <img src={imageNasa1} alt="" className='faq-image'/>
+      <img src={imageNasa2} alt="" className='faq-image'/>
+      <img src={imageNasa3} alt="" className='faq-image'/>
       <video controls>
         <source src={videoNasa1} type="video/mp4" />
         Your browser does not support the video tag.
@@ -62,4 +49,4 @@ const About = () => {
   )
 }
 
-export default About;
+export default Faq;

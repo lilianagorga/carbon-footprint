@@ -1,18 +1,13 @@
 /* About.css */
 
-.about-container {
+.faq-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.app-name {
-  font-weight: bold;
-  color: #007bff;
-}
-
 /* Stili per le immagini */
-.about-image {
+.faq-image {
   max-width: 100%;
   height: auto;
   margin: 20px 0;
@@ -20,7 +15,7 @@
 }
 
 /* Stili per i paragrafi */
-.about-container p {
+.faq-container p {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
   line-height: 1.5;

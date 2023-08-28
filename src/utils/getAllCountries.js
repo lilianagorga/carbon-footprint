@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getAllCountries = async () => {
+export const getAllCountries = async () => {
   const res = await axios.get('https://api.v2.emissions-api.org/api/v2/countries.json');
   const data = res.data;
 
@@ -20,5 +20,3 @@ const getAllCountries = async () => {
 
   return sortedCountryList;
 };
-
-export default getAllCountries;
