@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../assets/styles/home.css';
 import imageNasa1 from '../assets/img/img-nasa-1.jpeg';
 import imageNasa2 from '../assets/img/img-nasa-2.jpeg';
-import videoNasa1 from '../assets/video/video-nasa-1.mp4';
+import videoNasa from '../assets/video/video-nasa.mp4';
 
 const Home = () => {
   return (
@@ -38,7 +38,7 @@ const Home = () => {
         </div>
         <div className='video'>
           <video controls>
-            <source src={videoNasa1} type="video/mp4" />
+            <source src={videoNasa} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <p>

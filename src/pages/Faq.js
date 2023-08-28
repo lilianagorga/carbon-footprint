@@ -2,6 +2,7 @@ import React from 'react';
 import imageNasa3 from '../assets/img/img-nasa-3.jpeg';
 import imageNasa4 from '../assets/img/img-nasa-4.jpeg';
 import '../assets/styles/faq.css';
+import videoNasa2 from '../assets/video/video-nasa-2.mp4';
 
 const Faq = () => {
   return (
@@ -50,6 +51,15 @@ const Faq = () => {
           This illustration depicts how carbon is exchanged within Mars, involving its interior, surface rocks, polar caps, waters, and atmosphere. It also highlights a mechanism through which carbon is lost from the Martian atmosphere, affecting the isotopic ratio.
 
           Carbon dioxide (CO2) in Mars' atmosphere originates from the planet's mantle, released through volcanic activity or trapped in rocks crystallized from magma and later released. Upon entering the atmosphere, CO2 interacts with polar caps, transitioning from a gaseous to solid state. It can also dissolve in Martian waters, forming solid carbonates. The illustration portrays the loss of CO2 into space, mainly through ultraviolet photodissociation. This process breaks down CO2 molecules, releasing carbon atoms and influencing isotopic ratios. These complex interactions provide insights into the atmospheric dynamics of Mars.
+          </p>
+        </div>
+        <div className='video'>
+          <video controls>
+            <source src={videoNasa2} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>
+            The oceans absorb greenhouse gases and heat from the atmosphere, mitigating the effects of human emissions of carbon dioxide. The Atlantic Meridional Overturning Circulation moves water from the Atlantic, absorbing greenhouse gases along the way and burying them deep near Greenland.
           </p>
         </div>
       </div>
