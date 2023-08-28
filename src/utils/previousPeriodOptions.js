@@ -11,7 +11,7 @@ const calculateDate = (date, amount, type) => {
   }
 };
 
-export const timeRangeOption = [
+export const previousPeriodOptions = [
   {
     value: 'whole_period',
     label: 'Whole Period',

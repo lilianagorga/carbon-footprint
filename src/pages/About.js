@@ -1,8 +1,8 @@
 import React from 'react';
-import imageNasa1 from '../assets/img&video/img-nasa-1.jpeg';
-import imageNasa2 from '../assets/img&video/img-nasa-2.jpeg';
-import imageNasa3 from '../assets/img&video/img-nasa-3.jpeg';
-import videoNasa1 from '../assets/img&video/video-nasa-1.mp4';
+import imageNasa1 from '../assets/img/img-nasa-1.jpeg';
+import imageNasa2 from '../assets/img/img-nasa-2.jpeg';
+import imageNasa3 from '../assets/img/img-nasa-3.jpeg';
+import videoNasa1 from '../assets/video/video-nasa-1.mp4';
 import '../assets/styles/about.css';
 
 const About = () => {

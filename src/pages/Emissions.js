@@ -4,7 +4,7 @@ import axios from 'axios';
 import Chart from '../components/charts/Chart';
 import PromptChart from '../components/charts/PromptChart';
 import {
-  timeRangeOption,
+  previousPeriodOptions,
   handleDateRangeChange,
   processData,
 } from "../utils";
@@ -22,7 +22,7 @@ const Emissions = () => {
   const [rangeEmissions, setRangeEmissions] = useState([]);
   const [average, setAverage] = useState(0);
   const [promptChart, setPromptChart] = useState([]);
-  const [timeRange, setTimeRange] = useState(timeRangeOption[0].value);
+  const [previousPeriod, setpreviousPeriod] = useState(previousPeriodOptions[0].value);
   const [emissionData, setEmissionData] = useState([]);
 
   const generateUrl = () => {
@@ -37,8 +37,8 @@ const Emissions = () => {
 
   const url = generateUrl();
 
-  const handleTimeRangeChange = (e) => {
-    setTimeRange(e.target.value);
+  const handlepreviousPeriodChange = (e) => {
+    setpreviousPeriod(e.target.value);
   };
 
   useEffect(() => {
@@ -59,17 +59,17 @@ const Emissions = () => {
   }, [url, start, end]);
 
   useEffect(() => {
-    const dateRange = handleDateRangeChange(emissionData, timeRange);
+    const dateRange = handleDateRangeChange(emissionData, previousPeriod);
     setPromptChart(dateRange);
-  }, [emissionData, timeRange]);
+  }, [emissionData, previousPeriod]);
 
   return (
     <div>
       <div>
         <label>
           Period:
-          <select value={timeRange} onChange={handleTimeRangeChange}>
-            {timeRangeOption.map((range) => (
+          <select value={previousPeriod} onChange={handlepreviousPeriodChange}>
+            {previousPeriodOptions.map((range) => (
               <option key={range.value} value={range.value}>
                 {range.label}
               </option>

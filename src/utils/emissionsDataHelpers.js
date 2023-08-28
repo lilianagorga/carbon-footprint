@@ -1,5 +1,5 @@
 import {
-  timeRangeOption,
+  previousPeriodOptions,
   filterDataByDateRange,
   sortAndFormatData,
 } from "./index";
@@ -8,8 +8,8 @@ const calculateAverage = (data, setAverage) => {
   return data.reduce((acc, curr) => acc + curr.average, 0).toFixed(2);
 };
 
-export const handleDateRangeChange = (emissionData, timeRange) => {
-  const setRange = timeRangeOption.find((range) => range.value === timeRange);
+export const handleDateRangeChange = (emissionData, previousPeriod) => {
+  const setRange = previousPeriodOptions.find((range) => range.value === previousPeriod);
   const additionalFilterRange = filterDataByDateRange(
     emissionData,
     setRange.startDate,

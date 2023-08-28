@@ -1,4 +1,4 @@
 export { default as getAllCountries } from './getAllCountries';
-export { sortAndFormatData, filterDataByDateRange } from './dateUtils';
-export { timeRangeOption } from './timeRangeOption';
+export { sortAndFormatData, filterDataByDateRange } from './dateHelpers';
+export { previousPeriodOptions } from './previousPeriodOptions';
 export { handleDateRangeChange, processData } from './emissionsDataHelpers';
