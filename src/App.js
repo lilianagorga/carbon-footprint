@@ -1,28 +1,18 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Emissions from './pages/Emissions';
 import Faq from './pages/Faq';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './assets/styles/global.css';
 
 function App() {
   return (
     <div className="app">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/search">Search</Link>
-          </li>
-          <li>
-            <Link to="/faq">Faq</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <Header />
+      <Footer />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/search" element={<Search/>} />
