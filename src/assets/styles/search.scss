@@ -1,19 +1,25 @@
+$modal-bg-color: rgba(0, 0, 0, 0.7);
+$modal-content-bg-color: #ffffff;
+$modal-content-padding: 20px;
+$modal-content-border-radius: 5px;
+$modal-content-max-width: 500px;
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: $modal-bg-color;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
+  background-color: $modal-content-bg-color;
+  padding: $modal-content-padding;
+  border-radius: $modal-content-border-radius;
   width: 80%;
-  max-width: 500px;
+  max-width: $modal-content-max-width;
 }
