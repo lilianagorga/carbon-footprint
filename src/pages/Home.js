@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/home.scss';
 import imageNasa1 from '../assets/img/img-nasa-1.jpeg';
 import imageNasa2 from '../assets/img/img-nasa-2.jpeg';
 import videoNasa from '../assets/video/video-nasa.mp4';
+import carbonIcon from '../assets/img/carbon-icon.png';
 
 const Home = () => {
   return (
     <div className="home-container">
+      <Link to="/"><img src={carbonIcon} alt="Carbon Icon" className="carbon-icon" /></Link>
       <h1>Welcome to <span className='app-name'>Carbon Footprint</span></h1>
       <h2>What is <span className='app-name'>Carbon Footprint</span>?</h2>
       <p>

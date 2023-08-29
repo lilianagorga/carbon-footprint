@@ -3,3 +3,13 @@
   margin: 0 auto;
   padding: 20px;
 }
+
+.carbon-icon {
+  font-size: 48px;
+  height: auto;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

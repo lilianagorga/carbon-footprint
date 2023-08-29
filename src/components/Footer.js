@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faChartColumn, faQuestionCircle, faLink } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
@@ -14,13 +14,17 @@ const Footer = () => {
           Inspired by NASA's images and mission, we hope this application serves as a source of inspiration to make a positive impact on our environment.
         </p>
       </div>
-      <div className="footer-list">
+      <div className='footer-list'>
         <ul>
           <li>
-            <Link to="/search" className="link">Start Calculating</Link>
+            <Link to="/search" className="link">
+              <FontAwesomeIcon icon={faChartColumn} className='icon bounce'/>
+            </Link>
           </li>
           <li>
-            <Link to="/faq" className="link">Learn More</Link>
+            <Link to="/faq">
+              <FontAwesomeIcon icon={faQuestionCircle} className='icon fa-icon bounce'/>
+            </Link>
           </li>
         </ul>
       </div>
