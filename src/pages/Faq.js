@@ -40,7 +40,7 @@ const Faq = () => {
       </ul>
       <div>
         <div className='image'>
-          <img src={imageNasa3} alt="NASA's Carbon Sleuth Mission" />
+          <img src={imageNasa3} alt="NASA's Carbon Sleuth Mission" className="opacity"/>
           <p>
           Global average carbon dioxide concentrations observed by NASA's Orbiting Carbon Observatory-2 (OCO-2) mission, collecting data from June 1st to June 15th, 2015. The comprehensive measurements of OCO-2 extend from Earth's surface to the upper atmosphere, shedding light on intricate patterns of carbon dioxide distribution. The data assist scientists in uncovering crucial insights into the terrestrial carbon cycle, providing answers to key questions about atmospheric carbon dioxide.
           </p>

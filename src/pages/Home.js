@@ -29,7 +29,7 @@ const Home = () => {
           <p>Artist Concept of the Orbiting Carbon Observatory</p>
         </div>
         <div className='image'>
-          <img src={imageNasa2} alt="Carbon Processes on Mars"/>
+          <img src={imageNasa2} alt="Carbon Processes on Mars" className="opacity"/>
           <p>
             Global atmospheric carbon dioxide concentrations as recorded by NASA's Orbiting Carbon Observatory-2 from October 1 to November 11. The measurements reveal the dynamic behavior of carbon dioxide in Earth's atmosphere, offering insights into its distribution and variation.
           </p>
