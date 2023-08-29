@@ -1,7 +1,7 @@
 import React from 'react';
 import imageNasa3 from '../assets/img/img-nasa-3.jpeg';
 import imageNasa4 from '../assets/img/img-nasa-4.jpeg';
-import '../assets/styles/faq.css';
+import '../assets/styles/faq.scss';
 import videoNasa2 from '../assets/video/video-nasa-2.mp4';
 
 const Faq = () => {

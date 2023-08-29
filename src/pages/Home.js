@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles/home.css';
+import '../assets/styles/home.scss';
 import imageNasa1 from '../assets/img/img-nasa-1.jpeg';
 import imageNasa2 from '../assets/img/img-nasa-2.jpeg';
 import videoNasa from '../assets/video/video-nasa.mp4';

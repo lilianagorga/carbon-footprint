@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/styles/search.css';
+import '../assets/styles/search.scss';
 import '../pages/Search';
 import { getAllCountries } from '../utils';
 import { CountryModal, CoordinatesModal, CommonModal } from './ModalComponents';

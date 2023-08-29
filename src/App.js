@@ -6,7 +6,7 @@ import Emissions from './pages/Emissions';
 import Faq from './pages/Faq';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import './assets/styles/global.css';
+import './assets/styles/global.scss';
 
 function App() {
   return (
