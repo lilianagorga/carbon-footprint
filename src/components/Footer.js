@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { animated, useSpring } from 'react-spring';
 import '../assets/styles/footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartColumn, faQuestionCircle, faLink } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
+  const [bounceAnimation, setBounceAnimation] = useState(false);
+
+  const bounceConfig = useSpring({
+    transform: bounceAnimation ? 'translateY(-10px)' : 'translateY(0)',
+    config: { tension: 3000, friction: 50 },
+    onRest: () => {
+      setBounceAnimation(false);
+    },
+  });
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -17,13 +27,31 @@ const Footer = () => {
       <div className='footer-list'>
         <ul>
           <li>
-            <Link to="/search" className="link">
-              <FontAwesomeIcon icon={faChartColumn} className='icon bounce'/>
+            <Link to="/search">
+              <animated.div
+                className={`fa-icon ${bounceAnimation ? 'clicked' : ''}`}
+                style={{
+                  ...bounceConfig,
+                  cursor: 'pointer',
+                }}
+                onClick={() => setBounceAnimation(true)}
+              >
+                <FontAwesomeIcon icon={faChartColumn} className='icon' />
+              </animated.div>
             </Link>
           </li>
           <li>
             <Link to="/faq">
-              <FontAwesomeIcon icon={faQuestionCircle} className='icon fa-icon bounce'/>
+              <animated.div
+                className={`icon ${bounceAnimation ? 'clicked' : ''}`}
+                style={{
+                  ...bounceConfig,
+                  cursor: 'pointer',
+                }}
+                onClick={() => setBounceAnimation(true)}
+              >
+                <FontAwesomeIcon icon={faQuestionCircle} className='fa-icon' />
+              </animated.div>
             </Link>
           </li>
         </ul>
