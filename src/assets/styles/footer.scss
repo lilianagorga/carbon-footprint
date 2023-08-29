@@ -30,12 +30,19 @@
 .footer-content {
   position: relative;
   padding: 10px;
-  color: #779e0e;
+  color: #d0c182;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  .link-italic {
+    font-style: italic;
+    text-decoration: none;
+    font-weight: bold;
+    color: #d0c182;
+  }
 }
 
 .footer-list {

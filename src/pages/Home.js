@@ -47,8 +47,6 @@ const Home = () => {
       </div>
       <p className="conclusion">
         We believe that understanding the impact of our actions is the first step toward a sustainable future. We're here to support you in your journey toward a more eco-friendly life. Thank you for being part of the change! 
-        Sources: <a href="https://img.nasa.gov" target="_blank" rel="noopener noreferrer">img.nasa.gov</a>. 
-        Inspired by NASA's images and mission, we hope this application serves as a source of inspiration to make a positive impact on our environment.
       </p>
     </div>
   );
