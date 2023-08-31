@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MediaGroup = ({ type, content }) => {
+export const MediaGroup = ({ type, content }) => {
   return (
     <div className={`section-${type}-group`}>
       <div className={`section-${type}-inner-group`}>
@@ -12,5 +12,3 @@ const MediaGroup = ({ type, content }) => {
     </div>
   );
 };
-
-export default MediaGroup;

@@ -1,9 +1,6 @@
 import React from 'react';
 import '../assets/styles/faq.scss';
-import MediaGroup from '../components/FaqGroups/MediaGroup';
-import { FaqGroup } from '../components/FaqGroups/FaqGroup';
-import { faqArray } from '../components/FaqArrays/FaqArray';
-import { mediaArray } from '../components/FaqArrays/MediaArray';
+import { faqArray, mediaArray, MediaGroup, FaqGroup } from '../components/Faqs';
 
 const Faq = () => {
 

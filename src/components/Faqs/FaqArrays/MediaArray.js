@@ -1,6 +1,6 @@
-import imageNasa1 from '../../assets/img/img-nasa-1.jpeg';
-import imageNasa2 from '../../assets/img/img-nasa-2.jpeg';
-import imageNasa3 from '../../assets/img/img-nasa-3.jpeg';
+import imageNasa1 from '../../../assets/img/img-nasa-1.jpeg';
+import imageNasa2 from '../../../assets/img/img-nasa-2.jpeg';
+import imageNasa3 from '../../../assets/img/img-nasa-3.jpeg';
 
 export const mediaArray = [
   {
