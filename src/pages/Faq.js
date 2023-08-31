@@ -1,67 +1,60 @@
 import React from 'react';
+import imageNasa1 from '../assets/img/img-nasa-1.jpeg';
+import imageNasa2 from '../assets/img/img-nasa-2.jpeg';
 import imageNasa3 from '../assets/img/img-nasa-3.jpeg';
-import videoNasa2 from '../assets/video/video-nasa-2.mp4';
 import '../assets/styles/faq.scss';
+import MediaGroup from '../components/FaqGroups/MediaGroup';
+import { FaqGroup } from '../components/FaqGroups/FaqGroup';
+import { faqArray } from '../components/FaqArrays/FaqArray';
 
 const Faq = () => {
+  const mediaArray = [
+    {
+      type: 'main',
+      content: [
+        {
+          source: imageNasa1,
+          alt: 'Global CO2 Levels',
+          description: "This illustration depicts how carbon is exchanged within Mars, involving its interior, surface rocks, polar caps, waters, and atmosphere. It also highlights a mechanism through which carbon is lost from the Martian atmosphere, affecting the isotopic ratio. Carbon dioxide (CO2) in Mars' atmosphere originates from the planet's mantle, released through volcanic activity or trapped in rocks crystallized from magma and later released. Upon entering the atmosphere, CO2 interacts with polar caps, transitioning from a gaseous to solid state. It can also dissolve in Martian waters, forming solid carbonates. The illustration portrays the loss of CO2 into space, mainly through ultraviolet photodissociation. This process breaks down CO2 molecules, releasing carbon atoms and influencing isotopic ratios. These complex interactions provide insights into the atmospheric dynamics of Mars."
+        }
+      ],
+    },
+    {
+      type: 'aside',
+      content: [
+        {
+          source: imageNasa2,
+          alt: 'Carbon-Dioxide Snowfall on Mars',
+          description: "NASA's Mars Reconnaissance Orbiter has captured striking evidence of carbon-dioxide snow clouds enveloping Mars, along with the astonishing phenomenon of carbon-dioxide snow descending to the Martian surface. These remarkable observations provide valuable insights into the planet's atmospheric intricacies and seasonal dynamics, showcasing the unique interplay between atmospheric components on the Red Planet.This discovery sheds light on the complex climate dynamics of the Red Planet and how its atmosphere interacts with the surface. The presence of snowfall composed of carbon dioxide adds another intriguing layer to our understanding of Mars' ever-evolving environment."
+        },
+        {
+          source: imageNasa3,
+          alt: 'Effect of Seasonal Vegetation Cycle on Global Atmospheric Carbon Dioxide',
+          description: "Exploring the Influence of Seasonal Vegetation Cycle on Fluctuations in Global Atmospheric Carbon Dioxide Levels. This image delves into the intricate relationship between Earth's seasonal vegetation cycle and the dynamics of atmospheric carbon dioxide concentrations. By correlating vegetation changes with CO2 levels, scientists gain insights into how natural processes impact our planet's carbon balance throughout the year. This deeper understanding contributes to the ongoing efforts to mitigate and address climate change, fostering a more sustainable future",
+        }
+      ],
+    },
+  ];
+
   return (
     <div className='page-container'>
-      <section className='section-container'>
-        <main className='main-container'>
-          <div className='media-content'>
-            <img src={imageNasa3} alt="Global CO2 Levels"/>
-          </div>
-          <div className='text-content'>
-            <p>
-              This illustration depicts how carbon is exchanged within Mars, involving its interior, surface rocks, polar caps, waters, and atmosphere. It also highlights a mechanism through which carbon is lost from the Martian atmosphere, affecting the isotopic ratio.
-              Carbon dioxide (CO2) in Mars' atmosphere originates from the planet's mantle, released through volcanic activity or trapped in rocks crystallized from magma and later released. Upon entering the atmosphere, CO2 interacts with polar caps, transitioning from a gaseous to solid state. It can also dissolve in Martian waters, forming solid carbonates. The illustration portrays the loss of CO2 into space, mainly through ultraviolet photodissociation. This process breaks down CO2 molecules, releasing carbon atoms and influencing isotopic ratios. These complex interactions provide insights into the atmospheric dynamics of Mars.
-            </p>
-          </div>
-          <div className='media-content'>
-            <video controls>
-              <source src={videoNasa2} type="video/mp4"/>
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className='text-content'>
-            <p>
-              The oceans absorb greenhouse gases and heat from the atmosphere, mitigating the effects of human emissions of carbon dioxide. The Atlantic Meridional Overturning Circulation moves water from the Atlantic, absorbing greenhouse gases along the way and burying them deep near Greenland.
-            </p>
-          </div>
+      <section className='section-top-page'>
+        <main className='section-main'>
+          <MediaGroup type='main' content={mediaArray[0].content[0]} />
         </main>
-        <aside className='aside-container'>
-          <h3>General Questions</h3>
-          <p>
-            <strong>1. What is CO2 emissions calculation?</strong><br />
-            CO2 emissions calculation is a process that allows you to assess your contribution to carbon dioxide emissions in the atmosphere through your daily activities.
-          </p>
-          <p>
-            <strong>2. Why Should You Calculate CO2 Emissions?</strong><br />
-            Reducing CO2 emissions is crucial for slowing down climate change and preserving the environment for future generations. Here are some key statistics:
-          </p>
-          <ul>
-            <li>CO2 emissions contribute to global warming and climate change.</li>
-            <li>Transportation and energy consumption are major sources of emissions.</li>
-            <li>By reducing emissions, we can enjoy cleaner air, a more stable climate, and healthier ecosystems.</li>
-          </ul>
-          <p>
-            <strong>3. What benefits does emissions reduction offer?</strong><br />
-            Reducing CO2 emissions helps slow down climate change and preserve the environment for future generations. It can lead to cleaner air, a more stable climate, and healthier ecosystems.
-          </p>
-          <p>
-            <strong>4. How can I contribute?</strong><br />
-            By using the application, you can estimate your emissions and discover ways to make small changes to reduce them. Even small actions, when collective, make a significant difference.
-          </p>
-          <p>
-            <strong>5. How Can <span className='app-name'>Carbon Footprint</span> Help You?</strong><br />
-              Our application is designed to provide practical solutions for a more sustainable lifestyle:
-          </p>
-          <ul>
-            <li>Plan eco-friendly travel by calculating the emissions of your trips.</li>
-            <li>Understand your carbon footprint and discover ways to reduce it.</li>
-            <li>Explore scenarios to see the impact of lifestyle changes on emissions.</li>
-          </ul>
+        <aside className='section-side'>
+          <MediaGroup type='aside' content={mediaArray[1].content[0]} />
+          <MediaGroup type='aside' content={mediaArray[1].content[1]} />
         </aside>
+      </section>
+      <section className='section-bottom-page'>
+        <div className='section-bottom'>
+          <div className='faq-list'>
+            {faqArray.map((faq, index) => (
+              <FaqGroup key={index} question={faq.question} answer={faq.answer} subItems={faq.subItems} itemIndex={index} spanItem={index === 1 || index === 4 ? 2 : 1}/>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   )

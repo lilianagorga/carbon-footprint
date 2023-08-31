@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/home.scss';
-import imageNasa1 from '../assets/img/img-nasa-1.jpeg';
-import videoNasa from '../assets/video/video-nasa.mp4';
+import videoNasa1 from '../assets/video/video-nasa-1.mp4';
+import videoNasa2 from '../assets/video/video-nasa-2.mp4';
 
 const Home = () => {
   return (
@@ -9,17 +9,8 @@ const Home = () => {
       <section className="section-container">
         <main className='main-container'>
           <div className='media-content'>
-            <img src={imageNasa1} alt="Effect of Seasonal Vegetation Cycle on Global Atmospheric Carbon Dioxide"/>
-          </div>
-          <div className='text-content'>
-            <p>
-              Exploring the Influence of Seasonal Vegetation Cycle on Fluctuations in Global Atmospheric Carbon Dioxide Levels
-              This image delves into the intricate relationship between Earth's seasonal vegetation cycle and the dynamics of atmospheric carbon dioxide concentrations. By correlating vegetation changes with CO2 levels, scientists gain insights into how natural processes impact our planet's carbon balance throughout the year. This deeper understanding contributes to the ongoing efforts to mitigate and address climate change, fostering a more sustainable future.
-            </p>
-          </div>
-          <div className='media-content'>
             <video controls>
-              <source src={videoNasa} type="video/mp4"/>
+              <source src={videoNasa1} type="video/mp4"/>
               Your browser does not support the video tag.
             </video>
           </div>
@@ -28,6 +19,17 @@ const Home = () => {
               Carbon dioxide plays a crucial role in the Earth's climate system, contributing to the retention of heat in the atmosphere. This gas is released from various human activities, such as the burning of fossil fuels, and its concentrations fluctuate seasonally.
               Using data collected from NASA's Orbiting Carbon Observatory (OCO-2) satellite, scientists have developed a model that simulates the behavior of carbon in the atmosphere between September 1, 2014, and August 31, 2015.
               These models enhance our understanding of carbon dynamics and enable predictions about regions with high or low carbon dioxide concentrations based on terrestrial activities.
+            </p>
+          </div>
+          <div className='media-content'>
+            <video controls>
+              <source src={videoNasa2} type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className='text-content'>
+            <p>
+              The oceans absorb greenhouse gases and heat from the atmosphere, mitigating the effects of human emissions of carbon dioxide. The Atlantic Meridional Overturning Circulation moves water from the Atlantic, absorbing greenhouse gases along the way and burying them deep near Greenland.
             </p>
           </div>
         </main>
