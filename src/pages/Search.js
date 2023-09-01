@@ -37,12 +37,12 @@ const Search = () => {
 
   return (
     <div>
-      <h1>Search</h1>
-
+      <h1 className='search-title'>Search</h1>
       <nav>
         <ul>
-          <li>
-            <button
+          <li className='search-list'>
+            <button 
+              className='search-button'
               onClick={() => {
                 openModal("country");
               }}
@@ -51,8 +51,9 @@ const Search = () => {
             </button>
           </li>
           <p></p>
-          <li>
+          <li className='search-list'>
             <button
+              className='search-button'
               onClick={() => {
                 openModal("coordinates");
               }}
