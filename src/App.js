@@ -13,7 +13,9 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Link to="/"><img src={carbonIcon} alt="Carbon Icon" className="carbon-icon" /></Link>
+      <Link to="/" className='carbon-icon-link'>
+        <img src={carbonIcon} alt="Carbon Icon" className="carbon-icon" />
+      </Link>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/search" element={<Search/>} />
