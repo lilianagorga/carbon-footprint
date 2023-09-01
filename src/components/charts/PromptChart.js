@@ -1,25 +1,21 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const PromptChart = ({ data }) => {
   return (
     <div className="chart">
-      <h2>Prompt Chart</h2>
-      <LineChart
-        width={600}
-        height={300}
-        data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-      >
+      <h1 className="chart-title">Period Range</h1>
+      <BarChart width={600} height={400} data={data} margin={{ top: 15, right: 30, left: 20, bottom: 15 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
+        <YAxis tick={{ fontSize: 13 }}/>
+        <Tooltip cursor={{ fill: '#d0c182' }}/>
         <Legend />
-        <Line type="monotone" dataKey="average" stroke="#8884d8" activeDot={{ r: 8 }} />
-      </LineChart>
+        <Bar dataKey="average" fill="#779e0e" type='step' maxBarSize={70} z={3}/>
+      </BarChart>
     </div>
   );
 };
 
 export default PromptChart;
+

@@ -8,6 +8,7 @@ import {
   handleDateRangeChange,
   processData,
 } from "../utils";
+import '../assets/styles/emission.scss';
 
 const Emissions = () => {
   const [searchParams] = useSearchParams();
@@ -65,9 +66,9 @@ const Emissions = () => {
 
   return (
     <div>
-      <div>
-        <label>
-          Period:
+      <div className='chart-label-container'>
+        <label className='chart-label'>
+          <span>Period: </span>
           <select value={previousPeriod} onChange={handlepreviousPeriodChange}>
             {previousPeriodOptions.map((range) => (
               <option key={range.value} value={range.value}>
