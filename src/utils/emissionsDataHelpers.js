@@ -4,7 +4,7 @@ import {
   sortAndFormatData,
 } from "./index";
 
-const calculateAverage = (data, setAverage) => {
+const calculateAverage = (data) => {
   return data.reduce((acc, curr) => acc + curr.average, 0).toFixed(2);
 };
 
