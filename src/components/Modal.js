@@ -61,8 +61,8 @@ const Modal = ({
           />
 
           <div>
-            <button onClick={handleSubmit}>Send</button>
-            <button onClick={closeModal}>Close</button>
+            <button onClick={handleSubmit} className='button-modal'>Send</button>
+            <button onClick={closeModal} className='button-modal'>Close</button>
           </div>
         </div>
       </div>

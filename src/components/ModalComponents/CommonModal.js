@@ -8,6 +8,7 @@ export const CommonModal = ({ setStartDate, setEndDate, startDate, endDate }) =>
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
+            className="input-modal"
           />
         </label>
       </div>
@@ -19,6 +20,7 @@ export const CommonModal = ({ setStartDate, setEndDate, startDate, endDate }) =>
             type="date"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
+            className="input-modal"
           />
         </label>
       </div>

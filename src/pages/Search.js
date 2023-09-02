@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../components/Modal';
+import SearchResult from '../components/SearchResult';
 
 const Search = () => {
   const navigate = useNavigate();
@@ -10,6 +11,8 @@ const Search = () => {
   const [endDate, setEndDate] = useState('');
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
+  
+  const searchResults = [];
 
   const defaultModal = 'country';
 
@@ -36,8 +39,11 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className='search-container'>
       <h1 className='search-title'>Search</h1>
+      <p className='search-text'>
+        Welcome to our search tool. You can search for information by country or by coordinates.
+      </p>
       <nav>
         <ul>
           <li className='search-list'>
@@ -50,7 +56,9 @@ const Search = () => {
               Search by Country
             </button>
           </li>
-          <p></p>
+          <p className='search-text'>
+            Looking for information about a specific country? You can search by entering the country name or code.
+          </p>
           <li className='search-list'>
             <button
               className='search-button'
@@ -61,8 +69,14 @@ const Search = () => {
               Search by Coordinates
             </button>
           </li>
+          <p className='search-text'>
+            If you have specific coordinates, you can search for information related to that location.
+          </p>
         </ul>
       </nav>
+      {searchResults.length > 0 && (
+        <SearchResult searchResults={searchResults} />
+      )}
 
       {modalIsOpen && (
         <Modal
