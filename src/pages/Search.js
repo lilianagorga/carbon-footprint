@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../components/Modal';
 import SearchResult from '../components/SearchResult';
+import eco from '../assets/img/eco.png';
+import energySaving from '../assets/img/energy_savings.png';
+import car from '../assets/img/car.png';
+import pollution from '../assets/img/pollution.png';
+import industry from '../assets/img/industry.png';
+import industryViolet from '../assets/img/industry-violet.png';
+import lamp from '../assets/img/lamp.png';
+import footprint from '../assets/img/footprint.png';
+import cloud from '../assets/img/cloud.png';
+import cloudBlack from '../assets/img/cloud-black.png';
 
 const Search = () => {
   const navigate = useNavigate();
@@ -40,11 +50,14 @@ const Search = () => {
 
   return (
     <div className='search-container'>
-      <h1 className='search-title'>Search</h1>
-      <p className='search-text'>
-        Welcome to our search tool. You can search for information by country or by coordinates.
-      </p>
+      <img src={pollution} alt="pollution" className='icon-img'/>
       <nav>
+      <img src={car} alt="car" />
+      <span className='search-text'>
+        Welcome to our search tool. You can search for information by country or by coordinates.
+      </span>
+      <img src={eco} alt="eco" />
+      <img src={energySaving} alt="energy saving" />
         <ul>
           <li className='search-list'>
             <button 
@@ -56,9 +69,14 @@ const Search = () => {
               Search by Country
             </button>
           </li>
-          <p className='search-text'>
+          <div>
+            <img src={industry} alt="industry" className='icon-img'/>
+          </div>
+          <img src={footprint} alt="footprint" />
+          <span className='search-text'>
             Looking for information about a specific country? You can search by entering the country name or code.
-          </p>
+          </span>
+          <img src={lamp} alt="lamp" /> 
           <li className='search-list'>
             <button
               className='search-button'
@@ -69,9 +87,14 @@ const Search = () => {
               Search by Coordinates
             </button>
           </li>
-          <p className='search-text'>
+          <div>
+            <img src={industryViolet} alt="industry violet" className='icon-img'/>
+          </div>
+          <img src={cloudBlack} alt="cloud black" />
+          <span className='search-text'>
             If you have specific coordinates, you can search for information related to that location.
-          </p>
+          </span>
+          <img src={cloud} alt="cloud" />
         </ul>
       </nav>
       {searchResults.length > 0 && (

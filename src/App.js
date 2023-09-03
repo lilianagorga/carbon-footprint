@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import './assets/styles/global.scss';
 import carbonIcon from './assets/img/carbon-icon.png';
 
+
+
 function App() {
   return (
     <div className="app">
