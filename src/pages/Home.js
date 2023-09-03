@@ -27,7 +27,7 @@ const Home = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <div className='text-content'>
+          <div className='text-content text-content-small-size'>
             <p>
               The oceans absorb greenhouse gases and heat from the atmosphere, mitigating the effects of human emissions of carbon dioxide. The Atlantic Meridional Overturning Circulation moves water from the Atlantic, absorbing greenhouse gases along the way and burying them deep near Greenland.
             </p>
