@@ -3,7 +3,7 @@ export const CommonModal = ({ setStartDate, setEndDate, startDate, endDate }) =>
     <div>
       <div>
         <label>
-          Start Date:
+          <span className="span-modal">Start Date:</span>
           <input
             type="date"
             value={startDate}
@@ -15,7 +15,7 @@ export const CommonModal = ({ setStartDate, setEndDate, startDate, endDate }) =>
 
       <div>
         <label>
-          End Date:
+          <span className="span-modal">End Date:</span>
           <input
             type="date"
             value={endDate}
