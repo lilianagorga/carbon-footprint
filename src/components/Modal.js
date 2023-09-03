@@ -34,37 +34,73 @@ const Modal = ({
     fetchCountries();
   }, []);
 
+  const isValidCoordinates = (latitude, longitude) => {
+    if (!latitude || !longitude) {
+      return false;
+    }
+
+    if (isNaN(latitude) || isNaN(longitude)) {
+      return false;
+    }
+
+    if (
+      latitude < -90 ||
+      latitude > 90 ||
+      longitude < -180 ||
+      longitude > 180
+    ) {
+      return false;
+    }
+    return true;
+  }
+
+  const isSendAllowed = () => {
+    if (!startDate || !endDate) {
+      return false;
+    }
+
+    return modalType === 'country' ? country : isValidCoordinates(latitude, longitude);
+  }
+
   return (
-    <div>
-      <div className="modal">
-        <div className="modal-content">
-          {modalType === "country" ? (
-            <CountryModal
-              country={country}
-              setCountry={setCountry}
-              countryList={countryList}
-            />
-          ) : (
-            <CoordinatesModal
-              setLongitude={setLongitude}
-              setLatitude={setLatitude}
-              longitude={longitude}
-              latitude={latitude}
-            />
-          )}
+    <div
+      className={`modal ${
+        modalType === "coordinates" ? "modal-coordinates" : ""
+      }`}
+    >
+      {modalType === "country" ? (
+        <CountryModal
+          country={country}
+          setCountry={setCountry}
+          countryList={countryList}
+        />
+      ) : (
+        <CoordinatesModal
+          setLongitude={setLongitude}
+          setLatitude={setLatitude}
+          longitude={longitude}
+          latitude={latitude}
+        />
+      )}
 
-          <CommonModal
-            setStartDate={setStartDate}
-            setEndDate={setEndDate}
-            startDate={startDate}
-            endDate={endDate}
-          />
+      <CommonModal
+        setStartDate={setStartDate}
+        setEndDate={setEndDate}
+        startDate={startDate}
+        endDate={endDate}
+      />
 
-          <div>
-            <button onClick={handleSubmit} className='button-modal'>Send</button>
-            <button onClick={closeModal} className='button-modal'>Close</button>
-          </div>
-        </div>
+      <div>
+        <button
+          onClick={handleSubmit}
+          className="button-modal"
+          disabled={!isSendAllowed()}
+        >
+          Send
+        </button>
+        <button onClick={closeModal} className="button-modal">
+          Close
+        </button>
       </div>
     </div>
   );

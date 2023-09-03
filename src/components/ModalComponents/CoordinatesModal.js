@@ -14,6 +14,7 @@ export const CoordinatesModal = ({
             value={longitude}
             onChange={(e) => setLongitude(e.target.value)}
             className="input-modal"
+            placeholder="-180 to 180"
           />
         </label>
       </div>
@@ -25,6 +26,7 @@ export const CoordinatesModal = ({
             value={latitude}
             onChange={(e) => setLatitude(e.target.value)}
             className="input-modal"
+            placeholder="-90 to 90"
           />
         </label>
       </div>

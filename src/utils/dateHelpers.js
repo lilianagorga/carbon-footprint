@@ -23,14 +23,14 @@ export const sortAndFormatData = (data) => {
 };
 
 export const filterDataByDateRange = (data, startDate, endDate) => {
+  const startRange = new Date(startDate).getTime();
+  const endRange = new Date(endDate).getTime();
+
   const filterRange = data.filter((data) => {
-    const startDateValue = new Date(data.start).getTime();
-    const endDateValue = new Date(data.end).getTime();
+    const start = new Date(data.start).getTime();
+    const end = new Date(data.end).getTime();
 
-    const startRange = new Date(startDate).getTime();
-    const endRange = new Date(endDate).getTime();
-
-    return startDateValue >= startRange && endDateValue <= endRange;
+    return start >= startRange && end <= endRange;
   });
 
   return filterRange;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../components/Modal';
-import SearchResult from '../components/SearchResult';
 import eco from '../assets/img/eco.png';
 import energySaving from '../assets/img/energy_savings.png';
 import car from '../assets/img/car.png';
@@ -22,7 +21,6 @@ const Search = () => {
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
   
-  const searchResults = [];
 
   const defaultModal = 'country';
 
@@ -52,12 +50,12 @@ const Search = () => {
     <div className='search-container'>
       <img src={pollution} alt="pollution" className='icon-img'/>
       <nav>
-      <img src={car} alt="car" />
-      <span className='search-text'>
-        Welcome to our search tool. You can search for information by country or by coordinates.
-      </span>
-      <img src={eco} alt="eco" />
-      <img src={energySaving} alt="energy saving" />
+        <img src={car} alt="car" />
+        <span className='search-text'>
+          Welcome to our search tool. You can search for information by country or by coordinates.
+        </span>
+        <img src={eco} alt="eco" />
+        <img src={energySaving} alt="energy saving" />
         <ul>
           <li className='search-list'>
             <button 
@@ -97,9 +95,6 @@ const Search = () => {
           <img src={cloud} alt="cloud" />
         </ul>
       </nav>
-      {searchResults.length > 0 && (
-        <SearchResult searchResults={searchResults} />
-      )}
 
       {modalIsOpen && (
         <Modal
