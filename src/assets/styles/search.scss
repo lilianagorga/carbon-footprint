@@ -10,57 +10,6 @@ $margin: 1rem;
 $padding: 1rem;
 $border: 2px solid #000;
 
-.modal {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: $modal-bg-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 30%;
-  height: 30%;
-  border: $border;
-  padding: $modal-content-padding;
-  border-radius: $modal-content-border-radius;  
-}
-
-.modal-coordinates {
-  height: 45%;
-}
-
-.input-modal, .select-modal, .button-modal {
-  color: $modal-content-bg-color;
-  background-color: $modal-bg-color;
-  border: $border;
-  margin: $margin;
-  padding: $padding;
-  font-weight: bold;
-  font-family: $font-family;
-  border-radius: $modal-content-border-radius;
-  cursor: pointer;
-}
-
-.button-modal {
-  &:hover {
-    background-color: $modal-content-bg-color;
-    color: $modal-bg-color;
-  }
-
-  &[disabled] {
-    color: rgb(152, 11, 11);
-    cursor: not-allowed;
-  }
-}
-
-.span-modal {
-  font-weight: bold;
-  font-family: $font-family;
-  color: $modal-content-bg-color;
-}
-
 .search-button, .search-text {
   font-weight: bold;
   font-family: $font-family;
@@ -97,19 +46,5 @@ $border: 2px solid #000;
 @media (max-width: 1024px) {
   .search-icon {
     display: none;
-  }
-  .modal {
-    width: 50%;
-    height: 40%;
-  }
-
-  .modal-coordinates {
-    height: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .modal {
-    width: 60%;
   }
 }

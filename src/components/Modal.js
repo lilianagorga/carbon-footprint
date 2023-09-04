@@ -3,6 +3,7 @@ import '../assets/styles/search.scss';
 import '../pages/Search';
 import { getAllCountries } from '../utils';
 import { CountryModal, CoordinatesModal, CommonModal } from './ModalComponents';
+import '../assets/styles/modal.scss';
 
 const Modal = ({
   handleSubmit,
