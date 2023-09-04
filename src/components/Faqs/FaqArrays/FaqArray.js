@@ -28,5 +28,17 @@ export const faqArray = [
       "Understand your carbon footprint and discover ways to reduce it.",
       "Explore scenarios to see the impact of lifestyle changes on emissions."
     ]
+  },
+  {
+    question: "6. What are some everyday actions that can help reduce CO2 emissions?",
+    answer: "Reducing CO2 emissions starts with small everyday actions. Here are some steps you can take to reduce your carbon footprint:",
+    subItems: [
+      "Use public transportation: Opt for public transportation, carpooling, or biking instead of driving alone in your car.",
+      "Conserve energy: Turn off lights and appliances when not in use, use energy-efficient light bulbs, and properly insulate your home.",
+      "Reduce, reuse, recycle: Practice the three Rs to reduce waste and conserve resources.",
+      "Support renewable energy: If possible, switch to renewable energy sources like solar or wind power.",
+      "Plant trees: Trees absorb CO2 and can help offset your emissions.",
+      "Buy local and sustainable: Support local and sustainable products and reduce the carbon footprint of your food and goods."
+    ]
   }
 ];

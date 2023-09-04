@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const FaqGroup = ({ question, answer, subItems, itemIndex, spanItem }) => {
+export const FaqGroup = ({ question, answer, subItems }) => {
   return (
-    <div className={`faq-item faq-item-${itemIndex}`} style={{ gridColumn: `span ${spanItem}` }}>
+    <div className={`faq-item`}>
       <h3>{question}</h3>
       <p>{answer}</p>
       {subItems && subItems.length > 0 && (
