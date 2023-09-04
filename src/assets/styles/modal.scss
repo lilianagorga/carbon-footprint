@@ -1,13 +1,13 @@
 $modal-bg-color: #262626;
 $modal-content-bg-color: #779e0e;
 $content-bg-color: #d0c182;
-$modal-content-padding: 20px;
+$modal-content-padding: 1.25rem;
 $modal-content-border-radius: 5px;
-$modal-content-max-width: 500px;
+$modal-content-max-width: 31.25rem;
 $font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 $min-height: 100vh;
-$margin: 1rem;
-$padding: 1rem;
+$spacing: 1rem;
+$spacing: 1rem;
 $border: 2px solid #000;
 
 .modal {
@@ -35,8 +35,8 @@ $border: 2px solid #000;
   color: $modal-content-bg-color;
   background-color: $modal-bg-color;
   border: $border;
-  margin: $margin;
-  padding: $padding;
+  margin: $spacing;
+  padding: $spacing;
   font-weight: bold;
   font-family: $font-family;
   border-radius: $modal-content-border-radius;

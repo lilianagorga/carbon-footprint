@@ -1,3 +1,6 @@
+@import 'global';
+$font-size-lg: 1.5rem;
+
 .section-bottom-page {
   display: flex;
   gap: 20px;
@@ -28,7 +31,7 @@
   display: flex;  
   text-align: center; 
   font-weight: bold;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: $font-family;
   margin-top: 1rem;
 }
 
@@ -51,41 +54,43 @@
 .faq-list {
   display: flex;
   flex-direction: column;
+
+  .faq-item {
+    width: 100%;
+    font-weight: bold;
+    font-family: $font-family;
+    padding: 2rem 2rem 0;
+  }
+  
+  .faq-item:first-child {
+    padding-top: 5rem;
+  }
+  
+  .faq-item:last-child {
+    padding-bottom: 5rem;
+  }
+  
+  .faq-item h3 {
+    font-size: $font-size-lg;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-item p {
+    font-size: $font-size;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-item ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+  }
+  
+  .faq-item li {
+    margin-bottom: 0.5rem;
+  }
 }
 
-.faq-item {
-  width: 100%;
-  font-weight: bold;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding: 2rem 2rem 0;
-}
 
-.faq-item:first-child {
-  padding-top: 5rem;
-}
-
-.faq-item:last-child {
-  padding-bottom: 5rem;
-}
-
-.faq-item h3 {
-  font-size: 24px;
-  margin-bottom: 1rem;
-}
-
-.faq-item p {
-  font-size: 16px;
-  margin-bottom: 1rem;
-}
-
-.faq-item ul {
-  list-style-type: disc;
-  margin-left: 1rem;
-}
-
-.faq-item li {
-  margin-bottom: 0.5rem;
-}
 
 @media (max-width: 1024px) {
   .main-image {
