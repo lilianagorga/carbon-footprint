@@ -50,12 +50,12 @@ const Search = () => {
     <div className='search-container'>
       <img src={pollution} alt="pollution" className='icon-img'/>
       <nav>
-        <img src={car} alt="car" />
+        <img src={car} alt="car" className='search-icon'/>
         <span className='search-text'>
           Welcome to our search tool. You can search for information by country or by coordinates.
         </span>
-        <img src={eco} alt="eco" />
-        <img src={energySaving} alt="energy saving" />
+        <img src={eco} alt="eco" className='search-icon'/>
+        <img src={energySaving} alt="energy saving" className='search-icon'/>
         <ul>
           <li className='search-list'>
             <button 
@@ -70,11 +70,11 @@ const Search = () => {
           <div>
             <img src={industry} alt="industry" className='icon-img'/>
           </div>
-          <img src={footprint} alt="footprint" />
+          <img src={footprint} alt="footprint" className='search-icon'/>
           <span className='search-text'>
             Looking for information about a specific country? You can search by entering the country name or code.
           </span>
-          <img src={lamp} alt="lamp" /> 
+          <img src={lamp} alt="lamp" className='search-icon'/> 
           <li className='search-list'>
             <button
               className='search-button'
@@ -88,11 +88,11 @@ const Search = () => {
           <div>
             <img src={industryViolet} alt="industry violet" className='icon-img'/>
           </div>
-          <img src={cloudBlack} alt="cloud black" />
+          <img src={cloudBlack} alt="cloud black" className='search-icon'/>
           <span className='search-text'>
             If you have specific coordinates, you can search for information related to that location.
           </span>
-          <img src={cloud} alt="cloud" />
+          <img src={cloud} alt="cloud" className='search-icon'/>
         </ul>
       </nav>
 

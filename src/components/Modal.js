@@ -55,7 +55,7 @@ const Modal = ({
   }
 
   const isSendAllowed = () => {
-    if (!startDate || !endDate) {
+    if (!startDate || !endDate || startDate >= endDate) {
       return false;
     }
 

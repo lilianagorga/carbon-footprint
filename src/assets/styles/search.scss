@@ -1,4 +1,3 @@
-// VARIABLES
 $modal-bg-color: #262626;
 $modal-content-bg-color: #779e0e;
 $content-bg-color: #d0c182;
@@ -29,7 +28,7 @@ $border: 2px solid #000;
 }
 
 .modal-coordinates {
-  height: 40%;
+  height: 45%;
 }
 
 .input-modal, .select-modal, .button-modal {
@@ -51,8 +50,7 @@ $border: 2px solid #000;
   }
 
   &[disabled] {
-    background-color: #ccc;
-    color: #666;
+    color: rgb(152, 11, 11);
     cursor: not-allowed;
   }
 }
@@ -94,4 +92,24 @@ $border: 2px solid #000;
 .icon-img {
   padding: $padding;
   margin: $margin;
+}
+
+@media (max-width: 1024px) {
+  .search-icon {
+    display: none;
+  }
+  .modal {
+    width: 50%;
+    height: 40%;
+  }
+
+  .modal-coordinates {
+    height: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 60%;
+  }
 }
