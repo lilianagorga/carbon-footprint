@@ -9,6 +9,7 @@ import {
   processData,
 } from "../utils";
 import '../assets/styles/emission.scss';
+import { Loader } from '../components/Loader';
 
 const Emissions = () => {
   const [searchParams] = useSearchParams();
@@ -25,6 +26,7 @@ const Emissions = () => {
   const [promptChart, setPromptChart] = useState([]);
   const [previousPeriod, setpreviousPeriod] = useState(previousPeriodOptions[0].value);
   const [emissionData, setEmissionData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const generateUrl = () => {
     const currentDate = new Date().toJSON().split("T")[0];
@@ -52,8 +54,10 @@ const Emissions = () => {
         setEmissionData(formattedData);
         setRangeEmissions(filterRange);
         setAverage(processedAverage);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
       }
     };
     fetchData();
@@ -79,8 +83,12 @@ const Emissions = () => {
         </label>
       </div>
       <div className="charts-container">
-        <Chart rangeEmissions={rangeEmissions} average={average} />
-        <PromptChart data={promptChart} />
+        {isLoading ? <Loader /> : (
+          <>
+            <Chart rangeEmissions={rangeEmissions} average={average} />
+            <PromptChart data={promptChart} />
+          </>
+        )}
       </div>
     </div>
   );
