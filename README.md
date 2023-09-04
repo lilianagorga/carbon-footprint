@@ -15,6 +15,7 @@ After cloning the repository, you can run the following command to start the app
 
 ## Contributing 
 We welcome contributions to make this app even better. If you'd like to contribute, follow these steps:
+
 * Fork the project.
 * Create your feature branch: `git checkout -b feature-name`.
 * Commit your changes: `git commit -m 'Description of the feature'`.
@@ -38,6 +39,6 @@ To enhance its functionality, we've incorporated the following libraries:
 * Scss Reset
 
 ## Live Deploy
-* The application will be accessible at https://carbon-emissions.netlify.app`. 
+* The application will be accessible at https://carbon-emissions.netlify.app
 
 Whether you're environmentally conscious or just curious about your carbon footprint, this app provides valuable insights and tools to help you make informed decisions. Join us in our mission to create a greener, more sustainable future.
