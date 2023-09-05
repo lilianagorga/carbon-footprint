@@ -1,6 +1,9 @@
 $font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 $font-size-lg: 1.25rem;
 $font-size-md: 1.125rem;
+$spacing-lg: 5rem;
+$spacing-md: 2.5rem;
+$spacing-sm: 0.625rem;
 $link-color: #d0c182;
 $icon-color: #779e0e;
 $background-dark: #262626;
@@ -35,7 +38,7 @@ $background-light: #ccc;
 
 .footer-content {
   position: relative;
-  padding: 10px;
+  padding: $spacing-sm;
   color: $link-color;
   display: flex;
   justify-content: center;
@@ -53,14 +56,14 @@ $background-light: #ccc;
     font-weight: bold;
     font-family: $font-family;
     font-size: $font-size-lg;
-    padding-bottom: 2rem;
-    margin-bottom: 3rem;
+    padding-bottom: $spacing-md;
+    margin-bottom: $spacing-md;
   }
 }
 
 .footer-list {
   position: relative;
-  padding: 10px;
+  padding: $spacing-sm;
   display: flex;
   justify-content: center;
 
@@ -79,5 +82,12 @@ $background-light: #ccc;
         color: $icon-color;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content .footer-content-text {
+    padding-bottom: $spacing-lg;
+    margin-bottom: $spacing-lg;
   }
 }

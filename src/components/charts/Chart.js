@@ -15,17 +15,17 @@ const Chart = ({ rangeEmissions }) => {
           </h2>
         ) : (
           <BarChart
-            width={600}
-            height={400}
+            width={350}
+            height={350}
             data={rangeEmissions}
-            margin={{ top: 15, right: 30, left: 20, bottom: 15 }}
+            margin={{ top: 15, right: 50, left: 0, bottom: 15 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="start" />
             <YAxis tick={{ fontSize: 13 }} />
             <Tooltip cursor={{ fill: "#d0c182" }} />
             <Legend />
-            <Bar dataKey="average" fill="#779e0e" maxBarSize={70} z={3} />
+            <Bar dataKey="average" fill="#779e0e" />
           </BarChart>
         )}
       </div>

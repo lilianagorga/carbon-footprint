@@ -93,3 +93,10 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    position: absolute;
+    top: 10%;
+  }
+}
