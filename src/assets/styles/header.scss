@@ -1,4 +1,6 @@
 $background-light: #ccc;
+$background-dark: #262626;
+$size: 1.125rem;
 $font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 .header {
@@ -7,25 +9,75 @@ $font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   left: 0;
   width: 100%;
   background-color: $background-light;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.625rem 1.125rem;
   z-index: 1000;
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+
+    .bar {
+      background-color: $background-dark;
+      height: 3px;
+      width: $size;
+      margin: 5px 0;
+      display: block;
+    }
+  }
 }
 
 .nav-list {
   list-style: none;
   display: flex;
   gap: 20px;
-}
 
-.nav-list li:last-child {
-  margin-right: 0;
+  li:last-child {
+    margin-right: 0;
+  }
 }
 
 .link {
   font-weight: bold;
   font-family: $font-family;
-  font-size: 1.125rem;
+  font-size: $size;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $background-light;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-list li {
+    padding: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
 }

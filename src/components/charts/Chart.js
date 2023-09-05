@@ -6,9 +6,13 @@ const Chart = ({ rangeEmissions }) => {
     <div className="chart">
       <h1 className="chart-title">Period Custom</h1>
 
-      <div className={`${rangeEmissions.length === 0 ? 'chart-outer-container' : ''}`}>
+      <div
+        {...(rangeEmissions.length === 0 ? { className: 'no-data-chart' } : {})}
+      >
         {rangeEmissions.length === 0 ? (
-          <h2 className="chart-subtitle">No data for the period selected found</h2>
+          <h2 className="chart-subtitle">
+            No data for the period selected found
+          </h2>
         ) : (
           <BarChart
             width={600}

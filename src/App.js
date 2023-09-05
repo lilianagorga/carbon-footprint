@@ -15,12 +15,14 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Link to="/" className='carbon-icon-link'>
-        <img src={carbonIcon} alt="Carbon Icon" className="carbon-icon" />
-      </Link>
+      <div className="logo-container">
+        <Link to="/" className="carbon-icon-link">
+          <img src={carbonIcon} alt="Carbon Icon" className="carbon-icon" />
+        </Link>
+      </div>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/search" element={<Search/>} />
+        <Route path="/search" element={<Search />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/emissions" element={<Emissions />} />
       </Routes>
