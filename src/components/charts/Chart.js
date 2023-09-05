@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const Chart = ({ rangeEmissions }) => {
+  const [chartSize, setChartSize] = useState({ width: 350, height: 350 });
+
+  useEffect(() => {
+    const handleChartResize = () => {
+      const newSize = window.innerWidth;
+      if (newSize <= 1024) {
+        setChartSize({ width: 350, height: 350 });
+      } else {
+        setChartSize({ width: 450, height: 450 });
+      }
+    }
+    window.addEventListener('resize', handleChartResize);
+    handleChartResize();
+    return () => {
+      window.removeEventListener('resize', handleChartResize);
+    }
+  }, []);
+
   return (
     <div className="chart">
       <h1 className="chart-title">Period Custom</h1>
@@ -15,8 +33,8 @@ const Chart = ({ rangeEmissions }) => {
           </h2>
         ) : (
           <BarChart
-            width={350}
-            height={350}
+            width={chartSize.width}
+            height={chartSize.height}
             data={rangeEmissions}
             margin={{ top: 15, right: 50, left: 0, bottom: 15 }}
           >
