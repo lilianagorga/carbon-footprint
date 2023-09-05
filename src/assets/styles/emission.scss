@@ -1,4 +1,7 @@
 @import 'global';
+$spacing-lg: 3rem;
+$spacing-md: 2rem;
+$spacing-sm: 1rem;
 
 .chart {
   display: grid;
@@ -9,13 +12,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
-  padding: 1rem;
+  margin: $spacing-sm;
+  padding: $spacing-sm;
 }
 
 .chart-title, .chart-label span, 
 .chart-label select, 
-.chart-outer-container {
+.no-data-chart {
   font-weight: bold;
   font-family: $font-family;
 }
@@ -41,16 +44,16 @@
   display: none;
 }
 
-.chart-outer-container {
+.no-data-chart {
   margin-top: 1rem;
-  border: 2px solid black;
-  padding: 3rem;
+  border: 2px solid $background-color;
+  padding: $spacing-lg;
 }
 
 @media (max-width: 1300px) {
   .recharts-surface {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-right: $spacing-lg;
+    padding-left: $spacing-lg;
   }
 }
 
@@ -60,13 +63,13 @@
     align-items: center;
   }
   .chart {
-    margin: 1rem;
+    margin: $spacing-sm;
   }
 }
 
 @media (min-width:1024px) and (max-width: 768px) {
   .recharts-surface {
-    padding-right: 2rem;
+    padding-right: $spacing-md;
     padding-left: 0;
   }
 }

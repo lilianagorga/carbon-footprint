@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/header.scss';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
-      <Link to="/" className="link">Carbon Footprint</Link> 
-      <nav>
+      <Link to="/" className="link">
+        Carbon Footprint
+      </Link>
+
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+
+      <nav className={`nav ${menuOpen ? "show" : ""}`}>
         <ul className="nav-list">
           <li>
-            <Link to="/search" className="link">Start Calculating</Link>
+            <Link
+              to="/search"
+              className="link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Start Calculating
+            </Link>
           </li>
           <li>
-            <Link to="/faq" className="link">Learn More</Link>
+            <Link to="/faq" className="link" onClick={() => setMenuOpen(false)}>
+              Learn More
+            </Link>
           </li>
         </ul>
       </nav>

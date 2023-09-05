@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from "react-router-dom";
 import axios from 'axios';
-import Chart from '../components/charts/Chart';
-import PromptChart from '../components/charts/PromptChart';
 import {
   previousPeriodOptions,
   handleDateRangeChange,
   processData,
 } from "../utils";
 import '../assets/styles/emission.scss';
-import { Loader } from '../components/Loader';
+import Loader from '../components/Loader';
+import EmissionsContent  from '../components/EmissionsContent';
 
 const Emissions = () => {
   const [searchParams] = useSearchParams();
@@ -70,26 +69,15 @@ const Emissions = () => {
 
   return (
     <div>
-      <div className='chart-label-container'>
-        <label className='chart-label'>
-          <span>Period: </span>
-          <select value={previousPeriod} onChange={handlepreviousPeriodChange}>
-            {previousPeriodOptions.map((range) => (
-              <option key={range.value} value={range.value}>
-                {range.label}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <div className="charts-container">
-        {isLoading ? <Loader /> : (
-          <>
-            <Chart rangeEmissions={rangeEmissions} average={average} />
-            <PromptChart data={promptChart} />
-          </>
-        )}
-      </div>
+      {isLoading ? <Loader /> : 
+        <EmissionsContent
+          average={average}
+          previousPeriod={previousPeriod}
+          handlepreviousPeriodChange={handlepreviousPeriodChange}
+          promptChart={promptChart}
+          rangeEmissions={rangeEmissions}
+        />
+      }
     </div>
   );
 };
