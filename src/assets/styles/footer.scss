@@ -1,6 +1,7 @@
 $font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-$font-size-lg: 1.25rem;
-$font-size-md: 1.125rem;
+$font-size-lg: 2rem;
+$font-size-md: 1.25rem;
+$font-size-sm: 1rem;
 $spacing-lg: 5rem;
 $spacing-md: 2.5rem;
 $spacing-sm: 0.625rem;
@@ -12,7 +13,7 @@ $background-light: #ccc;
 .footer {
   position: relative;
   width: 100%;
-  padding: 10px;
+  padding: 0;
   border-top: 1px solid #000;
   &:before {
     content: "";
@@ -44,6 +45,7 @@ $background-light: #ccc;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: $background-dark;
 
   .link-italic {
     font-style: italic;
@@ -55,9 +57,7 @@ $background-light: #ccc;
   .footer-content-text {
     font-weight: bold;
     font-family: $font-family;
-    font-size: $font-size-lg;
-    padding-bottom: $spacing-md;
-    margin-bottom: $spacing-md;
+    font-size: $font-size-md;
   }
 }
 
@@ -78,7 +78,7 @@ $background-light: #ccc;
       font-size: $font-size-md;
 
       .icon {
-        font-size: 2em;
+        font-size: $font-size-lg;
         color: $icon-color;
       }
     }
@@ -86,8 +86,11 @@ $background-light: #ccc;
 }
 
 @media (max-width: 768px) {
-  .footer-content .footer-content-text {
-    padding-bottom: $spacing-lg;
-    margin-bottom: $spacing-lg;
+  .footer-content {
+    padding-bottom: 0;
+
+    .footer-content-text {
+      font-size: $font-size-sm;
+    }
   }
 }

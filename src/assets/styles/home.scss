@@ -65,6 +65,15 @@ $spacing-lg: 2rem;
   }
   .main-container {
     grid-row: 2;
+    grid-template-columns: 1fr;
+    margin: $spacing-md;
+    padding: $spacing-md;
+
+    .media-content {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
   }
 }
 
