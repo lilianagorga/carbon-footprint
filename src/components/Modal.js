@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../assets/styles/search.scss';
 import '../pages/Search';
 import { getAllCountries } from '../utils';
@@ -21,6 +21,7 @@ const Modal = ({
   modalType,
 }) => {
   const [countryList, setCountryList] = useState([]);
+  const modalRef = useRef(null);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -63,8 +64,14 @@ const Modal = ({
     return modalType === 'country' ? country : isValidCoordinates(latitude, longitude);
   }
 
+  const handleMouseLeave = () => {
+    closeModal();
+  };
+
   return (
     <div
+      ref={modalRef}
+      onMouseLeave={handleMouseLeave}
       className={`modal ${
         modalType === "coordinates" ? "modal-coordinates" : ""
       }`}

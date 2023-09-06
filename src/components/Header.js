@@ -11,13 +11,20 @@ const Header = () => {
         Carbon Footprint
       </Link>
 
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+      <button 
+        className="menu-toggle" 
+        onMouseEnter={() => setMenuOpen(true)}
+        onMouseLeave={() => setMenuOpen(false)}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </button>
 
-      <nav className={`nav ${menuOpen ? "show" : ""}`}>
+      <nav 
+        className={`nav ${menuOpen ? "show" : ""}`}
+      >
         <ul className="nav-list">
           <li>
             <Link
@@ -29,7 +36,11 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/faq" className="link" onClick={() => setMenuOpen(false)}>
+            <Link 
+              to="/faq" 
+              className="link" 
+              onClick={() => setMenuOpen(false)}
+            >
               Learn More
             </Link>
           </li>
