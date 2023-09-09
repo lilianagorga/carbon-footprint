@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/header.scss';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [menuOpen]);
+
+  const handleButtonClick = (event) => {
+    event.stopPropagation();
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <header className="header">
@@ -12,10 +34,8 @@ const Header = () => {
       </Link>
 
       <button 
-        className="menu-toggle" 
-        onMouseEnter={() => setMenuOpen(true)}
-        onMouseLeave={() => setMenuOpen(false)}
-        onClick={() => setMenuOpen(!menuOpen)}
+        className="menu-toggle"
+        onClick={handleButtonClick}
       >
         <span className="bar"></span>
         <span className="bar"></span>
@@ -24,6 +44,7 @@ const Header = () => {
 
       <nav 
         className={`nav ${menuOpen ? "show" : ""}`}
+        ref={menuRef}
       >
         <ul className="nav-list">
           <li>

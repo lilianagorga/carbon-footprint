@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../components/Modal';
 import eco from '../assets/img/eco.png';
@@ -21,16 +21,12 @@ const Search = () => {
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
   
-
   const defaultModal = 'country';
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalType, setModalType] = useState(defaultModal);
 
-  const openModal = (type) => {
-    setModalIsOpen(true);
-    setModalType(type);
-  };
+  const modalRef = useRef(null);
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -44,6 +40,36 @@ const Search = () => {
         `/emissions?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}`
       );
     }
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setModalIsOpen(false);
+      }
+    };
+
+    if (modalIsOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [modalIsOpen]);
+
+  const handleClickWithCountryType = (event) => {
+    handleButtonClick(event, "country");
+  };
+
+  const handleClickWithCoordinatesType = (event) => {
+    handleButtonClick(event, "coordinates");
+  };
+
+  const handleButtonClick = (event, type) => {
+    event.stopPropagation();
+    setModalIsOpen(!modalIsOpen);
+    setModalType(type);
   };
 
   return (
@@ -60,9 +86,7 @@ const Search = () => {
           <li className='search-list'>
             <button 
               className='search-button'
-              onClick={() => {
-                openModal("country");
-              }}
+              onClick={handleClickWithCountryType}
             >
               Search by Country
             </button>
@@ -78,9 +102,7 @@ const Search = () => {
           <li className='search-list'>
             <button
               className='search-button'
-              onClick={() => {
-                openModal("coordinates");
-              }}
+              onClick={handleClickWithCoordinatesType}
             >
               Search by Coordinates
             </button>
@@ -111,6 +133,7 @@ const Search = () => {
           setLatitude={setLatitude}
           closeModal={closeModal}
           modalType={modalType}
+          modalRef={modalRef}
         />
       )}
     </div>
