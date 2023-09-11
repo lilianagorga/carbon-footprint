@@ -4,24 +4,6 @@ $min-height: 100vh;
 $spacing: 1rem;
 $border: 2px solid #000;
 
-.search-button, .search-text {
-  font-weight: bold;
-  font-family: $font-family;
-  color: $text-color;
-  margin: $spacing;
-}
-
-.search-list {
-  margin: $spacing;
-}
-
-.search-button {
-  border: $border;
-  margin: $spacing;
-  padding: $spacing;
-  border-radius: $content-border-radius;
-}
-
 .search-container {
   display: flex;
   flex-direction: column;
@@ -30,11 +12,29 @@ $border: 2px solid #000;
   margin: $spacing;
   padding: $spacing;
   min-height: $min-height;
-}
 
-.icon-img {
-  padding: $spacing;
-  margin: $spacing;
+  .search-list {
+    margin: $spacing;
+  }
+
+  .search-button, .search-text {
+    font-weight: bold;
+    font-family: $font-family;
+    color: $text-color;
+    margin: $spacing;
+  }
+  
+  .search-button {
+    border: $border;
+    margin: $spacing;
+    padding: $spacing;
+    border-radius: $content-border-radius;
+  }
+  
+  .icon-img {
+    padding: $spacing;
+    margin: $spacing;
+  }
 }
 
 @media (max-width: 1024px) {

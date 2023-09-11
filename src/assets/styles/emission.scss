@@ -44,10 +44,6 @@ $spacing-sm: 1rem;
   display: none;
 }
 
-.recharts-text tspan {
-  display: none;
-}
-
 .no-data-chart {
   margin-top: 1rem;
   border: 2px solid $background-color;
@@ -57,7 +53,10 @@ $spacing-sm: 1rem;
 @media (max-width: 1024px) {
   .charts-container {
     flex-direction: column;
-
+    
+    .recharts-text tspan {
+      display: none;
+    }
   }
 
 }

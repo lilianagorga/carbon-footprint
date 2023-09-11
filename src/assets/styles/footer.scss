@@ -15,6 +15,7 @@ $background-light: #ccc;
   width: 100%;
   padding: 0;
   border-top: 1px solid #000;
+
   &:before {
     content: "";
     position: absolute;
@@ -25,6 +26,7 @@ $background-light: #ccc;
     background-color: $background-dark;
     z-index: -1;
   }
+  
   &:after {
     content: "";
     position: absolute;

@@ -63,6 +63,7 @@ $spacing-lg: 2rem;
   .section-container {
     grid-template-columns: 1fr;
   }
+  
   .main-container {
     grid-row: 2;
     grid-template-columns: 1fr;
@@ -78,7 +79,6 @@ $spacing-lg: 2rem;
 }
 
 @media (max-width: 1300px) {
-
   .main-container .text-content:last-child {
     display: flex;
     align-items: flex-start;
