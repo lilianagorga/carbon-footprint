@@ -39,6 +39,6 @@ To enhance its functionality, we've incorporated the following libraries:
 * Scss Reset
 
 ## Live Deploy
-* The application will be accessible at http://carbonfootprint.lilianagorga.com
+* The application will be accessible at https://carbonfootprint.lilianagorga.com
 
 Whether you're environmentally conscious or just curious about your carbon footprint, this app provides valuable insights and tools to help you make informed decisions. Join us in our mission to create a greener, more sustainable future.
